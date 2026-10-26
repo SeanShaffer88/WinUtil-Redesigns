@@ -8,13 +8,13 @@ WinUtil is a well-known Windows tool that installs programs, applies tweaks, fix
 
 Open PowerShell or Windows Terminal **as Administrator** (WinUtil needs it — it changes system settings), paste one line, press Enter. Every design below has its picture and its own command with it.
 
-> **About the pictures:** the Pro Console picture is a **real screenshot** — the actual WinUtil window on a Windows PC, launched with the command below it (25 Oct 2026). The other pictures are *mockup previews* rendered from each design's exact theme values — its real colours, fonts and sizes from `design.json`, drawn on the Install tab layout. As each design gets its first real run, its screenshot will replace its preview the same way.
+> **About the pictures:** every picture below is a **real screenshot** — the actual WinUtil window on a Windows PC, launched with the command under it (25 Oct 2026). What you see is exactly what the command opens.
 
 ### Pro Console
 
 ![Pro Console — real screenshot from a Windows PC](docs/previews/pro-console.png)
 
-True black, one red accent, monospace type — an expert console. (Mockup #7, the one built out as a full clickable prototype in `docs/`.) The picture above is the real program running, not a mockup.
+True black, one red accent, monospace type — an expert console. (Mockup #7, the one built out as a full clickable prototype in `docs/`.)
 
 ```powershell
 irm "https://raw.githubusercontent.com/SeanShaffer88/WinUtil-Redesigns/main/pro-console.ps1" | iex
@@ -24,7 +24,7 @@ Details: [designs/pro-console/DESIGN.md](designs/pro-console/DESIGN.md)
 
 ### Fluent Dark
 
-![Fluent Dark preview](docs/previews/fluent-dark.png)
+![Fluent Dark — real screenshot from a Windows PC](docs/previews/fluent-dark.png)
 
 Windows 11 Settings at night — soft dark surfaces, blue accent, rounded corners, and a tab row sized to read as a navigation bar.
 
@@ -36,7 +36,7 @@ Details: [designs/fluent-dark/DESIGN.md](designs/fluent-dark/DESIGN.md)
 
 ### Fluent Light
 
-![Fluent Light preview](docs/previews/fluent-light.png)
+![Fluent Light — real screenshot from a Windows PC](docs/previews/fluent-light.png)
 
 Windows 11 Settings by day — white and light grey, blue accent, rounded corners.
 
@@ -48,7 +48,7 @@ Details: [designs/fluent-light/DESIGN.md](designs/fluent-light/DESIGN.md)
 
 ### Accessible Large
 
-![Accessible Large preview](docs/previews/accessible-large.png)
+![Accessible Large — real screenshot from a Windows PC](docs/previews/accessible-large.png)
 
 Light, large type, thick borders, big buttons — for tired eyes, high display scaling and touch.
 
@@ -60,7 +60,7 @@ Details: [designs/accessible-large/DESIGN.md](designs/accessible-large/DESIGN.md
 
 ### High Contrast Night
 
-![High Contrast Night preview](docs/previews/high-contrast.png)
+![High Contrast Night — real screenshot from a Windows PC](docs/previews/high-contrast.png)
 
 Black, white and yellow — maximum contrast for low vision and bright rooms.
 
@@ -72,7 +72,7 @@ Details: [designs/high-contrast/DESIGN.md](designs/high-contrast/DESIGN.md)
 
 ### Midnight
 
-![Midnight preview](docs/previews/midnight.png)
+![Midnight — real screenshot from a Windows PC](docs/previews/midnight.png)
 
 Deep navy and teal — a calm dark design for long evening sessions.
 
@@ -84,7 +84,7 @@ Details: [designs/midnight/DESIGN.md](designs/midnight/DESIGN.md)
 
 ### Compact Expert
 
-![Compact Expert preview](docs/previews/compact-expert.png)
+![Compact Expert — real screenshot from a Windows PC](docs/previews/compact-expert.png)
 
 The original dark look, tightened — smaller type and tiles, a dominant search bar, more on screen at once.
 
@@ -96,7 +96,7 @@ Details: [designs/compact-expert/DESIGN.md](designs/compact-expert/DESIGN.md)
 
 ### Original
 
-![Original preview](docs/previews/original.png)
+![Original — real screenshot from a Windows PC](docs/previews/original.png)
 
 WinUtil exactly as its author ships it — same build route as the designs, no design applied. Useful as the comparison point: every preview above differs from this one only in theme values.
 
@@ -140,7 +140,7 @@ Each design folder under `designs/` holds a `DESIGN.md` (what it is, its signatu
 
 - `docs/winutil-10-mockups.html` — the original set of 10 alternate UI designs (also in Markdown: `docs/winutil-10-mockups.md`)
 - `docs/winutil-07-pro-console.html` — the Pro Console design built out as a clickable prototype
-- `docs/previews/` — the per-design preview images used above
+- `docs/previews/` — the per-design screenshots used above
 
 ### Designs that are still drawings, not launch commands yet
 
@@ -162,8 +162,8 @@ With no upstream source present, the build downloads the pinned WinUtil commit f
 
 ## Verification status
 
-- **Verified here (2026-10-25):** all 8 built scripts (7 designs + Original) pass a full PowerShell syntax parse; embedded theme values match each `design.json`; embedded window layout is well-formed; design-vs-original difference is confined to the theme block (byte-identical elsewhere). The mockup preview images were rendered from the same `design.json` values the build applies, and three of them (Fluent Light, Accessible Large, plus the original Pro Console render) were visually inspected after rendering.
-- **Field-verified (2026-10-25):** Pro Console launched on a real Windows PC with its one-line command and opened in the design — the screenshot at the top of this README is that run. The other designs use the identical launch route and build; what each of them looks like on a real screen is confirmed as each gets its first run.
+- **Verified here (2026-10-25):** all 8 built scripts (7 designs + Original) pass a full PowerShell syntax parse; embedded theme values match each `design.json`; embedded window layout is well-formed; design-vs-original difference is confined to the theme block (byte-identical elsewhere).
+- **Field-verified (2026-10-25):** all eight variants — the seven designs plus Original — were launched on a real Windows PC with their one-line commands and opened in the right colours, fonts and sizes. The screenshots above are those runs.
 
 ## Licence and credits
 
