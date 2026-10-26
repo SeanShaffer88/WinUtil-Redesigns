@@ -55,7 +55,16 @@
     "TabButtonHeight": "23",
     "ButtonWidth": "170",
     "ButtonHeight": "22",
-    "SearchBarWidth": "260",
-    "ButtonCornerRadius": "2"
+    "SearchBarWidth": "340",
+    "ButtonCornerRadius": "2",
+    "SearchBarHeight": "28",
+    "SearchBarTextBoxFontSize": "13",
+    "TabContentMargin": "3",
+    "CheckBoxMargin": "10,0,0,1",
+    "CheckBoxBulletDecoratorSize": "12",
+    "ToolTipWidth": "340",
+    "IconButtonSize": "30",
+    "ButtonMargin": "1",
+    "TabRowHeightInPixels": "42"
   }
 }
