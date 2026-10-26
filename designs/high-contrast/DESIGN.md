@@ -16,6 +16,13 @@ overrides are merged, before upstream's own `Compile.ps1` builds the
 script. Both slots carry the design because WinUtil picks Light or Dark
 from your saved preference / Windows mode — the design wins either way.
 
+The shared overrides are chosen to close as much of the gap to the
+layout mockups as a theme can reach — tab-bar sizing that reads as
+navigation, tooltip widths that can carry the real item descriptions,
+search-bar prominence, target sizes, and per-tab emphasis. See
+`docs/layout-designs.md` for the per-spec accounting of what that covers
+and the few things only a layout change can do.
+
 Nothing else changes: same functions, same app/tweak/feature configs,
 same XAML as upstream at the pinned commit. Diff `dist/original/`
 against this design's script and the only differences are inside the
@@ -28,4 +35,4 @@ embedded themes block (plus the build stamp comment at the top).
 - Text: `#FFFFFF`
 - Action buttons: `#1A1A1A` (hover `#3A3A00`, selected `#5C5600`)
 - Toggle ON: `#FFEE00`
-- Shared overrides: `FontFamily` = Segoe UI, `FontSize` = 13.5, `HeaderFontSize` = 18, `ButtonCornerRadius` = 2, `ButtonBorderThickness` = 2, `AppEntryWidth` = 240, `GroupBorderBackgroundColor` = #0A0A0A
+- Shared overrides: `FontFamily` = Segoe UI, `FontSize` = 14, `HeaderFontSize` = 18, `ButtonCornerRadius` = 2, `ButtonBorderThickness` = 2, `AppEntryWidth` = 240, `GroupBorderBackgroundColor` = #0A0A0A, `CheckBoxBulletDecoratorSize` = 17, `ToolTipWidth` = 420, `TabButtonHeight` = 32, `TabRowHeightInPixels` = 56, `IconButtonSize` = 40, `TabContentMargin` = 10

@@ -47,11 +47,17 @@
   },
   "shared": {
     "FontFamily": "Segoe UI",
-    "FontSize": "13.5",
+    "FontSize": "14",
     "HeaderFontSize": "18",
     "ButtonCornerRadius": "2",
     "ButtonBorderThickness": "2",
     "AppEntryWidth": "240",
-    "GroupBorderBackgroundColor": "#0A0A0A"
+    "GroupBorderBackgroundColor": "#0A0A0A",
+    "CheckBoxBulletDecoratorSize": "17",
+    "ToolTipWidth": "420",
+    "TabButtonHeight": "32",
+    "TabRowHeightInPixels": "56",
+    "IconButtonSize": "40",
+    "TabContentMargin": "10"
   }
 }
