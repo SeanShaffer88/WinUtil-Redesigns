@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WinUtil — 10 Alternate UI Designs</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,system-ui,sans-serif;background:#0e1114;color:#e8edf2}
+header{padding:36px 28px 10px;max-width:1180px;margin:auto}
+h1{font-size:34px;margin:0 0 8px}h2{font-size:24px;margin:0 0 4px}.sub{color:#aeb9c4;line-height:1.55;max-width:900px}
+section{max-width:1180px;margin:34px auto;padding:0 28px}
+.notes{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 14px}.note{background:#1a2027;border:1px solid #2b3540;border-radius:10px;padding:9px 12px;font-size:13px;color:#c7d2dd;flex:1;min-width:220px}.note b{color:#fff}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:#151a1f;border-radius:12px;overflow:hidden}th,td{padding:9px 11px;border-bottom:1px solid #26303a;text-align:left}th{background:#1d2630;color:#7fd4ff}
+.win{border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.55);border:1px solid #333;font-size:13px;line-height:1.35}
+.bar{display:flex;align-items:center;gap:8px;padding:9px 12px;font-weight:600}
+.dot{width:11px;height:11px;border-radius:50%}
+.btn{display:inline-block;padding:7px 12px;border-radius:7px;background:#274b63;color:#fff;font-size:12.5px;text-align:center}
+.btn.pri{background:#2f7fd1}.btn.red{background:#8e1f2f}.btn.ghost{background:transparent;border:1px solid #5a6a78;color:inherit}
+.chip{display:inline-block;padding:5px 10px;border-radius:999px;background:#24313d;font-size:12px;margin:2px}
+.chip.on{background:#3d7dc2;color:#fff}
+.tgl{display:inline-block;width:34px;height:19px;border-radius:999px;background:#3d7dc2;vertical-align:middle;margin-right:7px;position:relative;flex:none}
+.tgl:after{content:"";position:absolute;width:15px;height:15px;border-radius:50%;background:#fff;top:2px;right:2px}
+.tgl.off{background:#5a6670}.tgl.off:after{right:auto;left:2px}
+.cbx{display:inline-block;width:14px;height:14px;border:1.5px solid #7d8b98;border-radius:3px;vertical-align:-2px;margin-right:7px;text-align:center;font-size:11px;color:#4fc3ff;line-height:12px;flex:none}
+.row{display:flex;align-items:center;gap:6px;padding:5px 0}
+.app{display:flex;align-items:center;gap:9px;background:#262d34;border:1px solid #3a454f;border-radius:9px;padding:9px 10px;font-weight:600}
+.ic{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex:none}
+.mut{color:#93a3b1;font-size:12px}.foot{padding:8px 12px;font-size:12px;color:#9fb0bf;border-top:1px solid #333}
+.k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#7fd4ff;font-weight:700}
+.rec{background:#12291a;border:1px solid #2e7d43;border-radius:8px;padding:2px 8px;color:#8be09b;font-size:11px;font-weight:700}
+</style></head><body>
+<header>
+<h1>WinUtil — 10 alternate UI designs</h1>
+<p class="sub">Same program, same real content — <b>Install</b> (Brave, Chrome, Firefox, Discord, Teams, Telegram…), <b>Tweaks</b> (Essential / Advanced / Customize Preferences, Standard–Minimal–Advanced presets), <b>Config</b> (Features, Fixes, Legacy Windows Panels), <b>Updates</b> (Recommended / Windows Default / Disable Updates) and <b>Win11 Creator</b> (Select ISO → Modify Image → Output, with Status Log). Every mockup below re-arranges <i>that</i> work in a different way. These are crisp HTML mockups, not AI pictures, so all the text stays readable and layouts are exact.</p>
+<p class="sub"><b>How the current UI works (from your screenshots):</b> five top tabs, dark grey-blue theme, dense checkbox columns on Tweaks, app cards in a 3-wide grid on Install, action buttons stacked in side panels, and a status line pinned to the bottom. Its strengths: everything is visible at once and regulars are fast. Its costs: first-timers get no guidance, nothing explains a tweak before you tick it, and Updates/Creator already use cards and a wizard — so the program is quietly three different design languages at once.</p>
+</header>
+
+<section><h2>At a glance — which one is for whom</h2>
+<table><tr><th>#</th><th>Design</th><th>Big idea</th><th>Best for</th><th>Main trade-off</th></tr>
+<tr><td>1</td><td><b>Fluent Sidebar</b></td><td>Windows 11 Settings-style left navigation + switches</td><td>Most users — feels native</td><td>Less on screen at once</td></tr>
+<tr><td>2</td><td><b>Guided Setup Wizard</b></td><td>One decision per screen, in a safe order</td><td>First-timers, family PCs</td><td>Slower for regulars</td></tr>
+<tr><td>3</td><td><b>Dashboard Home</b></td><td>Status tiles + preset cards first, details second</td><td>Repeat “new PC day” use</td><td>Needs a real home screen built</td></tr>
+<tr><td>4</td><td><b>Search-First / Run Queue</b></td><td>Type what you want, queue it, run it all</td><td>Power users, keyboard</td><td>Browsing/discovery is weaker</td></tr>
+<tr><td>5</td><td><b>App Store Grid</b></td><td>Install becomes a visual store with a selection tray</td><td>Choosing apps visually</td><td>Tweaks/Config need a second style</td></tr>
+<tr><td>6</td><td><b>Master–Detail Explorer</b></td><td>Tree → list → plain-English explanation pane</td><td>Cautious users, learning</td><td>Takes the most screen width</td></tr>
+<tr><td>7</td><td><b>Black &amp; Red Pro Console</b></td><td>Dense console, live log always visible</td><td>Experts, your house style</td><td>Intimidating to beginners</td></tr>
+<tr><td>8</td><td><b>Light &amp; Large (Accessible)</b></td><td>Big type, big switches, one column, light theme</td><td>Older eyes, high-DPI, touch</td><td>Long scrolling lists</td></tr>
+<tr><td>9</td><td><b>Preset Matrix</b></td><td>A table showing exactly what each preset includes</td><td>Comparing Minimal/Standard/Advanced</td><td>Only shines for Tweaks/presets</td></tr>
+<tr><td>10</td><td><b>Recipe Builder</b></td><td>Build, save, export and re-run a named setup</td><td>Anyone who sets up many PCs</td><td>Most new machinery to build</td></tr></table>
+<p class="sub" style="margin-top:10px"><b>My pick if only one ships:</b> #1 Fluent Sidebar as the shell, with #3’s preset cards on its home page and #6’s explanation pane for Tweaks. #10 is the standout <i>feature</i> hiding in a design — it turns WinUtil from “run it once” into “my saved setup, on every PC.”</p></section>
+
+<section><h2>1 · Fluent Sidebar <span class="rec">RECOMMENDED SHELL</span></h2>
+<div class="notes"><div class="note"><b>Idea:</b> copy the layout every Windows 11 user already knows — Settings. Sections live in a left rail, checkboxes become switches.</div><div class="note"><b>Wins:</b> zero learning curve, search always visible, room to grow new sections.</div><div class="note"><b>Costs:</b> fewer tweaks visible per screen than the current two dense columns.</div></div>
+<div class="win" style="background:#20262c;color:#eef3f7">
+<div class="bar" style="background:#171c21"><span class="dot" style="background:#e81123"></span><span class="dot" style="background:#ffb900"></span><span class="dot" style="background:#2e7d43"></span>&nbsp; Windows Utility <span style="margin-left:auto" class="mut">🔍 Search tweaks, apps, features…&nbsp;&nbsp; ⚙</span></div>
+<div style="display:flex;min-height:340px">
+<div style="width:190px;background:#252c33;padding:14px 10px;flex:none">
+<div class="row" style="background:#31404e;border-radius:8px;padding:8px">⌂&nbsp; Home</div>
+<div class="row" style="padding:8px">⬇&nbsp; Install apps</div><div class="row" style="padding:8px">🎛&nbsp; Tweaks</div><div class="row" style="padding:8px">🧰&nbsp; Config &amp; fixes</div><div class="row" style="padding:8px">↻&nbsp; Updates</div><div class="row" style="padding:8px">💿&nbsp; Win11 Creator</div>
+<div style="margin-top:18px" class="mut">Signed in as Administrator ✓<br>Restore point: created today</div></div>
+<div style="flex:1;padding:18px 20px"><div class="k">Tweaks › Customize Preferences</div><h3 style="margin:6px 0 4px;font-size:20px">Make Windows feel like yours</h3><p class="mut">Switches apply when you press Run — nothing changes yet.</p>
+<div class="row"><span class="tgl"></span> Dark Theme for Windows</div><div class="row"><span class="tgl"></span> Game Mode</div><div class="row"><span class="tgl off"></span> File Explorer File Extensions</div><div class="row"><span class="tgl"></span> End Task With Right Click</div><div class="row"><span class="tgl off"></span> Start Menu Recommendations</div><div class="row"><span class="tgl"></span> Scrollbars Always Visible</div>
+<div style="margin-top:14px"><span class="btn pri">Run 6 selected tweaks</span> <span class="btn ghost">Undo selected</span></div></div></div>
+<div class="foot">Ready · 6 tweaks selected · No changes made yet</div></div></section>
+
+<section><h2>2 · Guided Setup Wizard</h2>
+<div class="notes"><div class="note"><b>Idea:</b> the Creator tab’s 3-step pattern, applied to the whole program: Safety → Apps → Tweaks → Updates → Review &amp; Run.</div><div class="note"><b>Wins:</b> nobody can run tweaks before a restore point exists; every screen explains itself.</div><div class="note"><b>Costs:</b> regulars need a “skip to expert view” escape hatch.</div></div>
+<div class="win" style="background:#f4f6f8;color:#17222c">
+<div class="bar" style="background:#e4eaf0">Windows Utility — Guided Setup <span style="margin-left:auto" class="mut">Step 3 of 5</span></div>
+<div style="display:flex;gap:6px;padding:14px 20px 0;font-size:12px"><span class="chip" style="background:#d7ecd9">✓ 1 Safety</span><span class="chip" style="background:#d7ecd9">✓ 2 Apps</span><span class="chip on">3 Tweaks</span><span class="chip">4 Updates</span><span class="chip">5 Review &amp; Run</span></div>
+<div style="padding:16px 20px"><h3 style="font-size:21px;margin:4px 0">How much should we tidy up?</h3><p class="mut" style="color:#5a6a76">Pick one. You can fine-tune every item on the next screen — nothing is hidden from you.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:10px">
+<div style="border:1px solid #c8d3dc;border-radius:12px;padding:14px"><b>Minimal</b><p class="mut">Restore point + a few safe fixes only.</p>9 changes</div>
+<div style="border:2px solid #2f7fd1;border-radius:12px;padding:14px;background:#eaf3fc"><b>Standard ✓</b><p class="mut">Disables telemetry, widgets and search ads. The balanced choice most people pick.</p>31 changes</div>
+<div style="border:1px solid #c8d3dc;border-radius:12px;padding:14px"><b>Advanced</b><p class="mut">Deep debloat incl. AppX removal. For people who know what they’re removing.</p>58 changes · ⚠ caution</div></div>
+<div style="display:flex;justify-content:space-between;margin-top:18px"><span class="btn ghost">← Back</span><span><span class="mut">Progress&nbsp;</span><span style="display:inline-block;width:160px;height:8px;background:#d5dee6;border-radius:99px;vertical-align:middle"><span style="display:block;width:60%;height:8px;background:#2f7fd1;border-radius:99px"></span></span> <span class="btn pri">Continue →</span></span></div></div>
+<div class="foot" style="color:#5a6a76;border-color:#dde4ea">✔ Restore point created · ✔ 14 apps queued · Nothing has been changed yet</div></div></section>
+
+<section><h2>3 · Dashboard Home</h2>
+<div class="notes"><div class="note"><b>Idea:</b> open on answers, not lists — “Is this PC set up? What’s left?” — then drill in.</div><div class="note"><b>Wins:</b> Updates’ card design becomes the whole app’s language; repeat visits take seconds.</div><div class="note"><b>Costs:</b> the dashboard must honestly measure state (installed apps, applied tweaks, update policy).</div></div>
+<div class="win" style="background:#1d2329;color:#eef3f7">
+<div class="bar" style="background:#14181c">Windows Utility — Home <span style="margin-left:auto"><span class="btn pri">▶ New PC Setup</span></span></div>
+<div style="padding:16px 18px">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+<div style="background:#262e36;border-radius:12px;padding:13px"><div class="k">Apps</div><b style="font-size:22px">34 installed</b><div class="mut">3 updates available</div></div>
+<div style="background:#262e36;border-radius:12px;padding:13px"><div class="k">Tweaks</div><b style="font-size:22px">Standard</b><div class="mut">31 of 31 applied ✓</div></div>
+<div style="background:#262e36;border-radius:12px;padding:13px"><div class="k">Updates</div><b style="font-size:22px">Recommended</b><div class="mut">Feature updates deferred 365d</div></div>
+<div style="background:#262e36;border-radius:12px;padding:13px"><div class="k">Safety</div><b style="font-size:22px">Protected</b><div class="mut">Restore point · today 09:14</div></div></div>
+<h3 style="margin:16px 0 8px">Start a job</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+<div style="border:1px solid #3a4652;border-radius:12px;padding:14px"><b>⬇ Install my usual apps</b><p class="mut">Browsers, Discord, Teams, 7-Zip, VLC… 14 apps, one click.</p><span class="btn">Open Install</span></div>
+<div style="border:1px solid #3a4652;border-radius:12px;padding:14px"><b>🎛 Re-apply Standard tweaks</b><p class="mut">Windows reset some settings in the last update. 4 need re-applying.</p><span class="btn">Review 4 tweaks</span></div>
+<div style="border:1px solid #3a4652;border-radius:12px;padding:14px"><b>💿 Build a Win11 ISO</b><p class="mut">Creator with your tweaks baked in, for the next machine.</p><span class="btn">Open Creator</span></div></div></div>
+<div class="foot">Last run: Standard tweaks · 31 applied, 0 failed · View log</div></div></section>
+
+<section><h2>4 · Search-First with a Run Queue</h2>
+<div class="notes"><div class="note"><b>Idea:</b> one big search box (Ctrl+K) over everything — apps, tweaks, features, fixes, panels — and a queue on the right instead of five separate Run buttons.</div><div class="note"><b>Wins:</b> fastest design here for anyone who knows the name of what they want; ends the “which tab was that in?” hunt.</div><div class="note"><b>Costs:</b> browsing and discovering new tweaks is weaker; search quality becomes the product.</div></div>
+<div class="win" style="background:#191f26;color:#eef3f7">
+<div style="padding:18px 20px 6px"><div style="background:#242d36;border:2px solid #3d7dc2;border-radius:11px;padding:13px 15px;font-size:16px">telemetry&nbsp;<span class="mut" style="font-size:12px">— 6 results across Tweaks, Config, Install</span><span style="float:right" class="mut">Ctrl K</span></div></div>
+<div style="display:flex;gap:0;padding:8px 20px 16px">
+<div style="flex:1;padding-right:16px">
+<div class="row" style="background:#232b34;border-radius:8px;padding:8px"><span class="cbx">✓</span><b>Telemetry – Disable</b><span class="mut">Tweaks › Essential</span><span style="margin-left:auto" class="btn">+ Queue</span></div>
+<div class="row" style="padding:8px"><span class="cbx"></span><b>Activity History – Disable</b><span class="mut">Tweaks › Essential</span><span style="margin-left:auto" class="btn ghost">+ Queue</span></div>
+<div class="row" style="padding:8px"><span class="cbx"></span><b>Location Tracking – Disable</b><span class="mut">Tweaks › Essential</span><span style="margin-left:auto" class="btn ghost">+ Queue</span></div>
+<div class="row" style="padding:8px"><span class="cbx">✓</span><b>Restore Point – Create</b><span class="mut">Tweaks › Essential · runs first</span><span style="margin-left:auto" class="btn">Queued</span></div>
+<div class="row" style="padding:8px"><span class="cbx"></span><b>Windows Defender Firewall</b><span class="mut">Config › Legacy Panels</span><span style="margin-left:auto" class="btn ghost">Open</span></div></div>
+<div style="width:230px;background:#212933;border-radius:12px;padding:13px;flex:none"><b>Run queue · 2</b><p class="mut">1 · Create Restore Point<br>2 · Disable Telemetry</p><span class="btn pri" style="display:block">Run everything</span><p class="mut" style="margin-top:8px">Apps, tweaks and fixes in one run, safety first, in order.</p></div></div>
+<div class="foot">Tip: press Enter to queue the top result · Queue is saved if you close the app</div></div></section>
+
+<section><h2>5 · App Store Grid</h2>
+<div class="notes"><div class="note"><b>Idea:</b> lean into what Install already almost is — a store. Bigger app tiles, category chips, installed state on every tile, and a selection tray instead of a left action column.</div><div class="note"><b>Wins:</b> the friendliest way to pick apps; “already installed” is obvious; FOSS badge becomes a proper filter.</div><div class="note"><b>Costs:</b> only solves Install — Tweaks and Config still need their own treatment (pair with #1 or #6).</div></div>
+<div class="win" style="background:#20262d;color:#eef3f7">
+<div class="bar" style="background:#161b20">Install <span style="font-weight:400;margin-left:10px"><span class="chip on">All</span><span class="chip">Browsers</span><span class="chip">Communications</span><span class="chip">Development</span><span class="chip">Games</span><span class="chip">Utilities</span><span class="chip">♻ Free &amp; Open Source</span></span></div>
+<div style="padding:14px 16px"><div class="k" style="margin-bottom:8px">Browsers</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px">
+<div class="app"><span class="ic" style="background:#e06a2d">🦁</span>Brave<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app" style="border-color:#2e7d43"><span class="ic" style="background:#3d7dc2">G</span>Chrome<span style="margin-left:auto;color:#8be09b;font-size:11px">INSTALLED ✓</span></div>
+<div class="app"><span class="ic" style="background:#e07b2d">🦊</span>Firefox<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#3f6fb5">🌊</span>Edge<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#5b8c3e">🧅</span>Tor Browser<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#c23b4e">V</span>Vivaldi<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#476b8a">🐺</span>LibreWolf<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#7a5ba6">◎</span>Zen Browser<span style="margin-left:auto" class="mut">＋</span></div></div>
+<div class="k" style="margin:14px 0 8px">Communications</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px">
+<div class="app" style="border-color:#3d7dc2"><span class="ic" style="background:#5865a8">D</span>Discord<span style="margin-left:auto;color:#7fd4ff;font-size:11px">QUEUED ✓</span></div>
+<div class="app"><span class="ic" style="background:#2a9d8f">S</span>Signal<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#3d7dc2">✈</span>Telegram<span style="margin-left:auto" class="mut">＋</span></div>
+<div class="app"><span class="ic" style="background:#7b61a8">zm</span>Zoom<span style="margin-left:auto" class="mut">＋</span></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;background:#171d23;padding:11px 16px"><b>Selected: 1 app</b><span class="mut">Discord · via WinGet</span><span style="margin-left:auto"><span class="btn ghost">Clear</span> <span class="btn pri">Install / Upgrade Selected</span> <span class="btn">Uninstall Selected</span></span></div></div></section>
+
+<section><h2>6 · Master–Detail Explorer <span class="rec">BEST FOR TRUST</span></h2>
+<div class="notes"><div class="note"><b>Idea:</b> three panes — categories, items, and a reading pane that explains the selected item in plain words before you touch it, including how to undo it.</div><div class="note"><b>Wins:</b> fixes WinUtil’s biggest gap: today the “?” gives almost nothing. Informed consent instead of blind ticking.</div><div class="note"><b>Costs:</b> needs real, honest descriptions written for ~200 items; narrow windows must collapse the third pane.</div></div>
+<div class="win" style="background:#1e242b;color:#eef3f7">
+<div class="bar" style="background:#151a1f">Tweaks — Explorer <span style="margin-left:auto" class="mut">Presets: <span class="chip">Minimal</span><span class="chip on">Standard</span><span class="chip">Advanced</span></span></div>
+<div style="display:flex;min-height:330px">
+<div style="width:170px;background:#242c34;padding:12px;flex:none"><div class="k">Categories</div><div class="row" style="background:#31404e;border-radius:7px;padding:6px 8px">Essential Tweaks</div><div class="row" style="padding:6px 8px">Advanced — Caution</div><div class="row" style="padding:6px 8px">Customize Preferences</div><div class="row" style="padding:6px 8px">Features</div><div class="row" style="padding:6px 8px">Fixes</div><div class="row" style="padding:6px 8px">Legacy Panels</div></div>
+<div style="width:250px;padding:12px;border-right:1px solid #333;flex:none">
+<div class="row"><span class="cbx">✓</span>Telemetry – Disable</div><div class="row"><span class="cbx">✓</span>Activity History – Disable</div><div class="row"><span class="cbx"></span>Widgets – Remove</div><div class="row" style="background:#2a3540;border-radius:7px;padding:6px"><span class="cbx">✓</span><b>Restore Point – Create</b></div><div class="row"><span class="cbx"></span>Location Tracking – Disable</div><div class="row"><span class="cbx">✓</span>Consumer Features – Disable</div><div class="row"><span class="cbx"></span>Hibernation – Disable</div></div>
+<div style="flex:1;padding:16px 18px"><div class="k">Selected item</div><h3 style="margin:5px 0">Restore Point – Create</h3><p style="color:#c7d2dd">Takes a snapshot of Windows settings before anything else runs. If a tweak causes trouble, Windows Restore rolls the PC back to this exact moment.</p><p class="mut"><b style="color:#eef3f7">Risk:</b> none · <b>Reversible:</b> yes, any time<br><b>Runs:</b> first, before all other tweaks · <b>Restart needed:</b> no</p><p class="mut">In presets: Minimal ✓ · Standard ✓ · Advanced ✓</p><span class="btn pri">Keep in my selection</span> <span class="btn ghost">Remove</span></div></div>
+<div class="foot">4 selected in Essential Tweaks · <b>Run Tweaks</b> is bottom-right in every section, always in the same place</div></div></section>
+
+<section><h2>7 · Black &amp; Red Pro Console</h2>
+<div class="notes"><div class="note"><b>Idea:</b> your family look — true black, one red accent, everything dense and keyboard-driven, and the log that is currently one line at the bottom becomes a real console.</div><div class="note"><b>Wins:</b> experts see state, selection and output at once; nothing is hidden behind tabs; matches your other apps.</div><div class="note"><b>Costs:</b> deliberately not beginner-friendly — this is the “expert view” other designs would link to.</div></div>
+<div class="win" style="background:#0a0a0b;color:#f2f2f2;font-family:Consolas,monospace">
+<div class="bar" style="background:#000;border-bottom:2px solid #d21f2f">■ WINUTIL <span style="color:#ff4d5e">PRO CONSOLE</span> <span style="margin-left:auto;font-weight:400;color:#aaa">[1] Install&nbsp; [2] Tweaks&nbsp; [3] Config&nbsp; [4] Updates&nbsp; [5] Creator&nbsp; [/] Search</span></div>
+<div style="padding:12px 16px;font-size:12.5px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 26px">
+<span>[x] WPFTweaksTelemetry <span style="color:#8a8a8a">— Disable</span></span><span>[x] Dark Theme for Windows <span style="color:#ff4d5e">ON</span></span>
+<span>[x] WPFTweaksRestorePoint <span style="color:#8a8a8a">— Create</span></span><span>[ ] File Explorer Hidden Files <span style="color:#8a8a8a">OFF</span></span>
+<span>[ ] WPFTweaksWidgets <span style="color:#8a8a8a">— Remove</span></span><span>[x] Game Mode <span style="color:#ff4d5e">ON</span></span>
+<span>[x] WPFTweaksActivityHistory</span><span>[x] End Task With Right Click <span style="color:#ff4d5e">ON</span></span>
+<span>[ ] WPFTweaksHiber <span style="color:#8a8a8a">— Disable</span></span><span>[ ] Start Menu Recommendations <span style="color:#8a8a8a">OFF</span></span></div>
+<div style="margin-top:12px"><span style="background:#d21f2f;color:#fff;padding:7px 14px;border-radius:4px">RUN TWEAKS (F5)</span> <span style="border:1px solid #555;padding:7px 14px;border-radius:4px">UNDO</span> <span style="color:#aaa">preset: STANDARD · selected: 11 · dry-run: OFF</span></div></div>
+<div style="background:#000;border-top:1px solid #333;padding:10px 16px;font-size:12px;color:#9fe89f">[19:02:11] Restore point created OK<br>[19:02:14] HKLM\...\DataCollection AllowTelemetry = 0 ✓<br><span style="color:#ffb3ba">[19:02:15] Installing WPFFeaturesSandbox (1/1)…</span></div></div></section>
+
+<section><h2>8 · Light &amp; Large — Accessible First</h2>
+<div class="notes"><div class="note"><b>Idea:</b> design for the person setting up a parent’s PC: light theme, 16px+ type, one column, sentences instead of compressed labels.</div><div class="note"><b>Wins:</b> readable at 200–300% scaling and on touch; switches and buttons are big targets; no squinting at grey-on-grey.</div><div class="note"><b>Costs:</b> long lists scroll a lot — needs strong section jump-links and search.</div></div>
+<div class="win" style="background:#ffffff;color:#14202b;font-size:15px">
+<div class="bar" style="background:#eef3f7;font-size:16px">Windows Utility <span style="margin-left:auto;font-weight:400">Text size: <b>A− A A+</b>&nbsp;&nbsp; 🌗 Theme</span></div>
+<div style="padding:18px 22px">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px"><span class="chip on" style="font-size:14px;padding:8px 14px">Tweaks</span><span class="chip" style="font-size:14px;padding:8px 14px;background:#e7edf2;color:#223">Install apps</span><span class="chip" style="font-size:14px;padding:8px 14px;background:#e7edf2;color:#223">Fix problems</span><span class="chip" style="font-size:14px;padding:8px 14px;background:#e7edf2;color:#223">Updates</span></div>
+<div style="border:1px solid #d3dde5;border-radius:14px;padding:16px;margin-bottom:12px"><div class="row"><span class="tgl" style="width:52px;height:30px"></span><span><b>Stop Windows sending usage data (telemetry)</b><br><span class="mut" style="font-size:13.5px;color:#54666f">Recommended. Windows keeps working exactly the same.</span></span></div></div>
+<div style="border:1px solid #d3dde5;border-radius:14px;padding:16px;margin-bottom:12px"><div class="row"><span class="tgl" style="width:52px;height:30px"></span><span><b>Make a safety snapshot first (restore point)</b><br><span class="mut" style="font-size:13.5px;color:#54666f">So you can undo everything. We suggest leaving this on.</span></span></div></div>
+<div style="border:1px solid #d3dde5;border-radius:14px;padding:16px"><div class="row"><span class="tgl off" style="width:52px;height:30px"></span><span><b>Remove the Widgets news panel</b><br><span class="mut" style="font-size:13.5px;color:#54666f">The weather-and-news panel on the taskbar. You can bring it back any time.</span></span></div></div>
+<div style="margin-top:16px"><span class="btn pri" style="font-size:15px;padding:12px 20px;border-radius:10px">Apply my 2 choices</span> <span class="btn ghost" style="font-size:15px;padding:12px 18px;border-radius:10px;border-color:#9db0bf">Show me everything (expert list)</span></div></div>
+<div class="foot" style="color:#54666f;border-color:#e1e8ee">Nothing changes until you press Apply · Every choice can be undone from this same screen</div></div></section>
+
+<section><h2>9 · Preset Matrix</h2>
+<div class="notes"><div class="note"><b>Idea:</b> answer the question the current Tweaks tab can’t: “What exactly does Standard do that Minimal doesn’t?” One table, presets as columns, differences in plain sight.</div><div class="note"><b>Wins:</b> presets stop being a leap of faith; the Custom column turns the table itself into the editor.</div><div class="note"><b>Costs:</b> a wide table — on small windows it must switch to comparing two presets at a time.</div></div>
+<div class="win" style="background:#1e242b;color:#eef3f7">
+<div class="bar" style="background:#151a1f">Tweaks — Compare presets <span style="margin-left:auto"><span class="btn">Apply Standard</span></span></div>
+<div style="padding:14px 16px"><table style="background:transparent;font-size:13px">
+<tr><th style="background:transparent;color:#cfe3f2">Tweak</th><th style="background:transparent;color:#cfe3f2">Minimal</th><th style="background:#23405c;color:#fff">Standard</th><th style="background:transparent;color:#cfe3f2">Advanced</th><th style="background:transparent;color:#cfe3f2">Custom (you)</th></tr>
+<tr><td>Create Restore Point</td><td>●</td><td>●</td><td>●</td><td><span class="cbx">✓</span></td></tr>
+<tr><td>Disable Telemetry</td><td>●</td><td>●</td><td>●</td><td><span class="cbx">✓</span></td></tr>
+<tr><td>Disable Activity History</td><td>○</td><td>●</td><td>●</td><td><span class="cbx">✓</span></td></tr>
+<tr><td>Remove Widgets</td><td>○</td><td>●</td><td>●</td><td><span class="cbx"></span></td></tr>
+<tr><td>Disable Hibernation</td><td>○</td><td>○</td><td>●</td><td><span class="cbx"></span></td></tr>
+<tr><td>AppX / bloatware removal</td><td>○</td><td>○</td><td>● ⚠</td><td><span class="cbx"></span></td></tr>
+<tr><td>Updates: Recommended profile</td><td>●</td><td>●</td><td>○</td><td><span class="cbx">✓</span></td></tr>
+<tr><td><b>Total changes</b></td><td><b>9</b></td><td><b>31</b></td><td><b>58</b></td><td><b>4 so far</b></td></tr></table>
+<p class="mut">● = included &nbsp; ○ = not included &nbsp;·&nbsp; Click any row to read what it does (#6’s explanation pane belongs here too). Start from a preset, change one box, and it becomes your Custom column — saveable as a recipe (#10).</p>
+<span class="btn pri">Run my Custom column</span> <span class="btn ghost">Save as recipe…</span></div>
+<div class="foot">Preset definitions come from the same preset.json the command line uses — the table can’t drift from reality</div></div></section>
+
+<section><h2>10 · Recipe Builder <span class="rec">STANDOUT FEATURE</span></h2>
+<div class="notes"><div class="note"><b>Idea:</b> a setup is a thing you build once, name, save, export, and re-run — “Sean’s New PC”, “Gaming Rig”, “Office Debloat”. Library on the left, your recipe in the middle, sharing on the right.</div><div class="note"><b>Wins:</b> turns one-off ticking into a reusable asset; recipes are just the JSON WinUtil already loads, so they can be shared and versioned.</div><div class="note"><b>Costs:</b> the biggest build of the ten — needs save/load, ordering rules (restore point always first) and a run report.</div></div>
+<div class="win" style="background:#20262d;color:#eef3f7">
+<div class="bar" style="background:#161b20">Recipes <span style="font-weight:400;margin-left:8px"><span class="chip on">Sean’s New PC</span><span class="chip">Gaming Rig</span><span class="chip">Office Debloat</span><span class="chip">＋ New</span></span><span style="margin-left:auto"><span class="btn pri">▶ Run this recipe</span></span></div>
+<div style="display:flex;min-height:320px">
+<div style="width:230px;background:#242c34;padding:13px;flex:none"><div class="k">Library — drag in, or click +</div>
+<div class="row">＋ 🌐 Firefox, Chrome</div><div class="row">＋ 💬 Discord, Telegram</div><div class="row">＋ 🛠 7-Zip, VLC, PowerToys</div><div class="row">＋ 🎛 Telemetry – Disable</div><div class="row">＋ 🪟 .NET Framework – Enable</div><div class="row">＋ 🔧 Network – Reset</div><div class="row">＋ ↻ Updates: Recommended</div></div>
+<div style="flex:1;padding:14px 16px"><div class="k">Recipe · runs top to bottom</div>
+<div style="background:#29333d;border-left:4px solid #2e7d43;border-radius:8px;padding:10px 12px;margin:8px 0"><b>1 · Safety</b> — Create Restore Point <span class="mut">(always first, can’t be removed)</span></div>
+<div style="background:#29333d;border-radius:8px;padding:10px 12px;margin:8px 0"><b>2 · Install</b> — 14 apps via WinGet <span class="mut">· Browsers, Communications, Utilities</span></div>
+<div style="background:#29333d;border-radius:8px;padding:10px 12px;margin:8px 0"><b>3 · Tweaks</b> — Standard preset, minus Widgets removal</div>
+<div style="background:#29333d;border-radius:8px;padding:10px 12px;margin:8px 0"><b>4 · Updates</b> — Recommended profile</div>
+<div style="background:#29333d;border:1px dashed #556574;border-radius:8px;padding:10px 12px;color:#93a3b1">＋ Drop the next step here — Features, Fixes, or a Win11 Creator ISO</div></div>
+<div style="width:210px;background:#242c34;padding:13px;flex:none"><b>Share this setup</b><p class="mut">Export .json · Import · Copy link<br>Version 3 · edited today</p><span class="btn" style="display:block;margin-bottom:7px">Export recipe file</span><span class="btn ghost" style="display:block">Run on next PC → same file, one command</span><p class="mut" style="margin-top:10px">Last run: this PC · 31 steps · 0 failed</p></div></div>
+<div class="foot">Recipes use WinUtil’s existing preset/config format — no new file type to invent</div></div></section>
+
+<section><h2>Verdict</h2>
+<p class="sub" style="max-width:1000px">If WinUtil ever gets one redesign, I’d ship <b>#1 as the shell</b> (it’s the layout Windows users already have in muscle memory), put <b>#3’s home dashboard</b> inside it, borrow <b>#6’s explanation pane</b> for Tweaks, keep <b>Updates’ three cards and the Creator’s step flow</b> almost as they are — they’re already the best-designed screens in the current app — and add <b>#10 Recipes</b> as the feature that makes the redesign worth doing. #2 and #8 are really the same lesson at two sizes: plain sentences and a safe order help more people than any new colour scheme. #4, #7 and #9 are expert accelerators — best offered as alternate views inside the main shell, not as the only door in.</p>
+<p class="sub">Want any of these taken further — a full clickable prototype of one design, the same screen drawn in all 10 styles for a fair side-by-side, or one built as a real WPF mockup in the repo’s own XAML style? Say the number and I’ll build that one out.</p>
+<p class="mut">Based on: Chris Titus Tech WinUtil (github.com/ChrisTitusTech/winutil) and the five tab screenshots supplied 2026-10-25 — Install, Tweaks, Config, Updates, Win11 Creator. Mockups are original redesigns using WinUtil’s real labels and content; no upstream artwork copied.</p></section>
+</body></html>
