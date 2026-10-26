@@ -53,6 +53,19 @@
     "ButtonCornerRadius": "6",
     "AppEntryWidth": "230",
     "AppEntryMargin": "4",
-    "GroupBorderBackgroundColor": "#2B2B2B"
+    "GroupBorderBackgroundColor": "#2B2B2B",
+    "TabButtonWidth": "148",
+    "TabButtonHeight": "34",
+    "TabRowHeightInPixels": "58",
+    "TabButtonFontSize": "15",
+    "TabContentMargin": "10",
+    "ToolTipWidth": "460",
+    "CheckBoxBulletDecoratorSize": "16",
+    "ButtonHeight": "30",
+    "ButtonWidth": "210",
+    "SearchBarWidth": "280",
+    "SearchBarHeight": "30",
+    "IconButtonSize": "38",
+    "Win11StepTitleFontSize": "24"
   }
 }
