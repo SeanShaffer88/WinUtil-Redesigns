@@ -94,11 +94,14 @@ function Build-One {
     Set-Content -Path (Join-Path $outDir "winutil.ps1") -Value ($stamp + $built) -Encoding UTF8
 
     $stub = @"
-# WinUtil-Redesigns launcher: $designName
-# Fetches the pre-built design script and runs it, passing through any
-# arguments (for example -Preset Standard), exactly like the original
-# WinUtil automation pattern.
-& ([ScriptBlock]::Create((Invoke-RestMethod "https://raw.githubusercontent.com/SeanShaffer88/WinUtil-Redesigns/main/dist/$Slug/winutil.ps1"))) @args
+# WinUtil-Redesigns launcher - $displayName ($Design)
+# Downloads this design's built WinUtil script to a file and runs it from
+# there. Running from a file matters: when WinUtil relaunches itself as
+# Administrator, it re-runs its own file - so it re-runs THIS design
+# instead of falling back to the official build.
+`$WinUtilDesignPath = Join-Path `$env:TEMP "winutil-$Design.ps1"
+Invoke-RestMethod "$rawBase/dist/$Design/winutil.ps1" -OutFile `$WinUtilDesignPath
+& `$WinUtilDesignPath @args
 "@
     Set-Content -Path (Join-Path $RepoRoot "$Slug.ps1") -Value $stub -Encoding UTF8
     Write-Host "Built dist\$Slug\winutil.ps1 ($designName)"
