@@ -52,6 +52,17 @@
     "AppEntryWidth": "240",
     "ButtonCornerRadius": "4",
     "TabButtonWidth": "118",
-    "GroupBorderBackgroundColor": "#141416"
+    "GroupBorderBackgroundColor": "#141416",
+    "CheckBoxBulletDecoratorSize": "15",
+    "CheckBoxMargin": "12,0,0,3",
+    "CheckboxMouseOverColor": "#FF3247",
+    "TabContentMargin": "8",
+    "ToolTipWidth": "380",
+    "IconButtonSize": "36",
+    "ButtonMargin": "2",
+    "SearchBarWidth": "260",
+    "TabButtonHeight": "30",
+    "TabRowHeightInPixels": "54",
+    "Win11LogFontFamily": "Consolas, Monaco"
   }
 }
