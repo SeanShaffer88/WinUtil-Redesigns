@@ -49,6 +49,15 @@
     "FontFamily": "Segoe UI",
     "ButtonCornerRadius": "6",
     "AppEntryWidth": "230",
-    "GroupBorderBackgroundColor": "#111A2E"
+    "GroupBorderBackgroundColor": "#111A2E",
+    "ConfigUpdateButtonFontSize": "15",
+    "ConfigTabButtonFontSize": "14.5",
+    "ButtonHeight": "30",
+    "ToolTipWidth": "400",
+    "TabContentMargin": "10",
+    "HeaderFontSize": "18",
+    "Win11StepHeroFontSize": "44",
+    "TabButtonHeight": "30",
+    "TabRowHeightInPixels": "54"
   }
 }
