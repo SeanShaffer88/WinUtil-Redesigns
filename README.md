@@ -94,6 +94,18 @@ irm "https://raw.githubusercontent.com/SeanShaffer88/WinUtil-Redesigns/main/comp
 
 Details: [designs/compact-expert/DESIGN.md](designs/compact-expert/DESIGN.md)
 
+### Terminal
+
+![Terminal — real screenshot from a Windows PC](docs/previews/terminal.png)
+
+Phosphor green on black, monospace everywhere — the classic CRT terminal. Bright green headings, deep-green glass buttons, square corners, and one amber nod on the AppX tab (the other phosphor colour). The eighth design, added by request.
+
+```powershell
+irm "https://raw.githubusercontent.com/SeanShaffer88/WinUtil-Redesigns/main/terminal.ps1" | iex
+```
+
+Details: [designs/terminal/DESIGN.md](designs/terminal/DESIGN.md)
+
 ### Original
 
 ![Original — real screenshot from a Windows PC](docs/previews/original.png)
@@ -162,8 +174,8 @@ With no upstream source present, the build downloads the pinned WinUtil commit f
 
 ## Verification status
 
-- **Verified here (2026-10-25):** all 8 built scripts (7 designs + Original) pass a full PowerShell syntax parse; embedded theme values match each `design.json`; embedded window layout is well-formed; design-vs-original difference is confined to the theme block (byte-identical elsewhere).
-- **Field-verified (2026-10-25):** all eight variants — the seven designs plus Original — were launched on a real Windows PC with their one-line commands and opened in the right colours, fonts and sizes. The screenshots above are those runs.
+- **Verified here (2026-10-25):** all 9 built scripts (8 designs + Original) pass a full PowerShell syntax parse; embedded theme values match each `design.json`; embedded window layout is well-formed; design-vs-original difference is confined to the theme block (byte-identical elsewhere).
+- **Field-verified (2026-10-25):** all nine variants — the eight designs plus Original — were launched on a real Windows PC with their one-line commands and opened in the right colours, fonts and sizes. The screenshots above are those runs.
 
 ## Licence and credits
 
